@@ -1,0 +1,40 @@
+{
+  "name": "bookcart",
+  "version": "1.0.0",
+  "description": "Desafio para a empresa Tegra. Desenvolver um carrinho de compra de livros.",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack-dev-server",
+    "production": "webpack -p"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jass91/trabalheNaTegra.git"
+  },
+  "keywords": [
+    "Tegra",
+    "Desafio",
+    "Livro"
+  ],
+  "author": "Jesley Cáceres Marcelino",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Jass91/trabalheNaTegra/issues"
+  },
+  "homepage": "https://github.com/Jass91/trabalheNaTegra#readme",
+  "dependencies": {
+    "bootstrap": "^3.3.6",
+    "jquery": "^3.0.0",
+    "react": "^15.1.0",
+    "react-dom": "^15.1.0",
+    "react-router": "^2.5.1"
+  },
+  "devDependencies": {
+    "babel-core": "^6.10.4",
+    "babel-loader": "^6.2.4",
+    "babel-preset-react": "^6.11.1",
+    "html-webpack-plugin": "^2.21.0",
+    "webpack": "^1.13.1",
+    "webpack-dev-server": "^1.14.1"
+  }
+}

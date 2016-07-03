@@ -1,0 +1,15 @@
+var React = require('react');
+
+var ListBookComponent = React.createClass({
+
+  render : function(){
+    return(
+      <div>
+        <span>Estou na home</span>
+      </div>
+    );
+  }
+
+});
+
+module.exports = ListBookComponent;

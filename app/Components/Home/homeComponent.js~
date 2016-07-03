@@ -1,0 +1,19 @@
+var React = require('react');
+
+var HomeComponent = React.createClass({
+
+  render : function(){
+    return(
+      <div>
+<nav className="navbar navbar-default navbar-fixed-top">
+  <div className="container">
+  </div>
+</nav>
+        <span>Estou na home</span>
+      </div>
+    );
+  }
+
+});
+
+module.exports = HomeComponent;

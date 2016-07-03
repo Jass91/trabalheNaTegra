@@ -1,0 +1,12 @@
+var React = require('react');
+var HomeComponent = require('./homeComponent');
+
+var ListBookContainer = React.createClass({
+  render : function(){
+    return(
+      <HomeComponent />
+    )
+  }
+});
+
+module.exports = ListBookContainer;
