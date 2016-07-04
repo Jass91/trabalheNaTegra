@@ -5,15 +5,14 @@ var Route = ReactRouter.Route;
 var BrowserHistory = ReactRouter.browserHistory;
 
 var Main = require('../Components/Main/mainComponent');
-var Home = require('../Components/Home/homeContainer');
+var Shopcart = require('../Components/Shopcart/shopcartContainer');
 var ListBook = require('../Components/Book/listBookContainer');
 
 var Routes = (
   <Router history={BrowserHistory}>
     <Route component={Main}>
- 			<Route path = '/' component={Home} />
-			<Route path = 'books' component={ListBook}>
-			</Route>
+ 			<Route path = '/' component={ListBook} />
+			<Route path = 'shopcart' component={Shopcart} />
 		</Route>
   </Router>
 )

@@ -1,0 +1,12 @@
+.bookcard{
+	width: 300px;
+	height: 300px;
+};
+
+.title{
+	text-align: "center";
+};
+
+.thumbnail{
+	width: 32px;
+}
