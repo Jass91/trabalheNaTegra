@@ -39,18 +39,7 @@ var BookCardComponent = function(props){
 	   			</div>
 	   		</div>
  			</div>
-      <hr style={{borderColor: "black"}}/>
-      <div className="row">
-        <div className="col-xs-6 col-md-6 col-lg-6 right">
-          <button
-            className="btn btn-success"
-            onClick={function(){props.add(props.book)}}>Add to cart</button>
-        </div>
-        <div className="col-xs-6 col-md-6 col-lg-6 left">
-          <button
-            className="btn btn-danger"> Remove from cart</button>
-        </div>
-      </div>
+      <hr style={{borderColor: "black"}} />
  		</div>
   );
 };

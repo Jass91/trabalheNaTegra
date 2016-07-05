@@ -1,7 +1,5 @@
 var React = require('react');
-
 var ListBookComponent = require('./listBookComponent');
-var BookCardComponent = require('../Shared/BookCard/BookCardComponent');
 
 var ListBookContainer = React.createClass({
 
@@ -16,23 +14,10 @@ var ListBookContainer = React.createClass({
   render : function(){
     return(
       <ListBookComponent
-      	books={this.toBookCardArray(this.state.books)}
+      	books={this.state.books}
       	query={this.state.query}
       	filter = {self.filter} />
     )
-  },
-
-  toBookCardArray : function(books){
-    var self = this;
-    return books.map(function(book, index){
-      return (
-        <div key={index} className="col-lg-4 col-md-4 col-xs-12">
-          <BookCardComponent
-            book = {book}
-            primaryAction = {self.props.primaryAction} />
-        </div>
-      );
-    });
   },
 
   filter : function(event){

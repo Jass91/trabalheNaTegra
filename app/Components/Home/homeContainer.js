@@ -1,5 +1,5 @@
 'use strict'
-const books = 
+const books =
 [
   {
     title: "The Pragmatic Programmer: From Journeyman to Master",
@@ -77,20 +77,30 @@ const books =
 
 var React = require('react');
 var HomeComponent = require('./homeComponent');
+var BookCardComponent = require('../Shared/BookCard/BookCardComponent');
 
 var HomeContainer = React.createClass({
 
 	getInitialState : function(){
-
 		return {books: books};
 	},
 
   render : function(){
     return(
       <HomeComponent
-        books={this.state.books}
+        books={this.toBookCardArray()}
         addToCart={this.addToCart}/>
     );
+  },
+
+  toBookCardArray : function(){
+    return this.state.books.map(function(book, index){
+      return (
+        <div key={index} className="col-lg-4 col-md-4 col-xs-12">
+          <BookCardComponent  book = {book} />
+        </div>
+      );
+    });
   },
 
   addToCart : function(book){
