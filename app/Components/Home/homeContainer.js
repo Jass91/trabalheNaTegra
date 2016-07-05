@@ -1,3 +1,4 @@
+'use strict'
 const books = 
 [
   {
@@ -88,7 +89,7 @@ var HomeContainer = React.createClass({
     return(
       <HomeComponent
         books={this.state.books}
-        addToCart={this.handleAddToCart}/>
+        addToCart={this.addToCart}/>
     );
   },
 
