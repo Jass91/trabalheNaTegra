@@ -1,15 +1,16 @@
 var React = require('react');
+var ListBookContainer = require('../Book/listBookContainer');
 
-var HomeComponent = React.createClass({
+var HomeComponent = function(props){
 
-  render : function(){
-    return(
-      <div>
-        <span>Estou na home</span>
-      </div>
-    );
-  }
+  return(
+    <div>
+   	  <ListBookContainer
+        books = {props.books}
+        primaryAction={props.addToCart}/>
+    </div>
+  );
 
-});
+};
 
-module.exports = HomeComponent;
+module.exports = HomeComponent

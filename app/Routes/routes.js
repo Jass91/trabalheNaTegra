@@ -6,12 +6,12 @@ var BrowserHistory = ReactRouter.browserHistory;
 
 var Main = require('../Components/Main/mainComponent');
 var Shopcart = require('../Components/Shopcart/shopcartContainer');
-var ListBook = require('../Components/Book/listBookContainer');
+var Home = require('../Components/Home/HomeContainer');
 
 var Routes = (
   <Router history={BrowserHistory}>
     <Route component={Main}>
- 			<Route path = '/' component={ListBook} />
+ 			<Route path = '/' component={Home} />
 			<Route path = 'shopcart' component={Shopcart} />
 		</Route>
   </Router>
