@@ -78,6 +78,7 @@ const books =
 var React = require('react');
 var HomeComponent = require('./homeComponent');
 var BookCardComponent = require('../Shared/BookCard/BookCardComponent');
+var ListItemContainer = require('../Shared/List/listItemContainer');
 
 var HomeContainer = React.createClass({
 
@@ -86,24 +87,17 @@ var HomeContainer = React.createClass({
 	},
 
   render : function(){
-    return(
-      <HomeComponent
-        books={this.toBookCardArray()}
-        addToCart={this.addToCart}/>
-    );
+    return(<HomeComponent books={this.toListItemArray()} />);
   },
-
-  toBookCardArray : function(){
+ 
+  toListItemArray : function(){
+    var self = this;
     return this.state.books.map(function(book, index){
-      return (
-        <div key={index} className="col-lg-4 col-md-4 col-xs-12">
-          <BookCardComponent  book = {book} />
-        </div>
-      );
+      return (<ListItemContainer key={index} item={book} handleClick={self.addToCart}/>);
     });
   },
 
-  addToCart : function(book){
+  addToCart : function(book, quantity){
   	debugger;
   	console.log(book);
   }

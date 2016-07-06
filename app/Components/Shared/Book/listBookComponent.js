@@ -17,7 +17,7 @@ var ListBookComponent = function(props){
                 placeholder="Search"
                 name="q" />
               <div className="input-group-btn">
-                  <button className="btn btn-default" type="submit"><i className="glyphicon glyphicon-search"></i></button>
+                <button className="btn btn-default" type="submit"><i className="glyphicon glyphicon-search"></i></button>
               </div>
           </div>
    			</div>

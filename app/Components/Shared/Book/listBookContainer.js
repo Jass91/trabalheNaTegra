@@ -2,8 +2,7 @@
 
 var React = require('react');
 var ListBookComponent = require('./listBookComponent');
-var BookCardComponent = require('./BookCardComponent');
-var ListItem = require('../ListItem/listItem');
+var BookCardComponent = require('./bookCardComponent');
 
 var ListBookContainer = React.createClass({
 
@@ -20,31 +19,16 @@ var ListBookContainer = React.createClass({
   render : function(){
     return(
       <ListBookComponent
-      	books={this.bookArrayToListItemArray()}
-      	actionPanel = {this.props.actionPanel}
+      	books={this.state.books}
       	query={this.state.query}
       	filter = {this.filter} />
     )
   },
 
-  bookArrayToListItemArray : function(){
-    var self = this;
-    return this.state.books.map(function(book, index){
-      return (
-        <div key={index}>
-          <ListItem
-          	item={book}
-          	actionPanel={self.props.actionPanel}
-          />
-        </div>
-      );
-    });
-  },
-
   filter : function(event){
     var value = event.target.value;
-    var filteredArrayOfBooks = this.props.books.filter(function(book){
-    	if(book.title.includes(value) || book.author.includes(value)){
+    var filteredArrayOfBooks = this.props.books.filter(function(elem){
+    	if(elem.props.item.title.includes(value) || elem.props.item.author.includes(value)){
     		return true;
     	}
     });

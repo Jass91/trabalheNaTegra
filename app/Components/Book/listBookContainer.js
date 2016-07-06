@@ -16,16 +16,16 @@ var ListBookContainer = React.createClass({
       <ListBookComponent
       	books={this.state.books}
       	query={this.state.query}
-      	filter = {self.filter} />
+      	filter = {this.filter} />
     )
   },
 
   filter : function(event){
   	debugger;
     var value = event.target.value;
-
-    var filteredArrayOfBooks = this.props.books.filter(function(book){
-    	if(book.name.contains(value) || book.author.contains(value)){
+    var filteredArrayOfBooks = this.props.books.filter(function(item){
+    	debugger;
+      if(item.props.book.name.contains(value) || item.props.book.author.contains(value)){
     		return true;
     	}
     });
