@@ -13,7 +13,7 @@ var ListItemComponent = function(props){
 	      <hr style={{borderColor: "black"}}/>
 					<div className="row">
 			      <div className="col-xs-6 col-md-6 col-lg-6 left">
-			        <div class="form-group">
+			        <div className="form-group">
 			          <div className="pull-left">
 			            <input
 			            	type="number"
@@ -39,9 +39,9 @@ var ListItemComponent = function(props){
 			      </div>
 			    </div>
 			    <div className="row">
-			    	<div col-xs-12 col-md-12 col-lg-12>
-			    		<div className="container text-left">
-			    			Total: R$ {props.item.price * props.quantity}
+			    	<div className="col-xs-12 col-md-12 col-lg-12">
+			    		<div className="text-left">
+			    			<span className="label label-warning">Total: R$ {props.item.price * props.quantity}</span>
 			    		</div>
 			    	</div>
 			    </div>

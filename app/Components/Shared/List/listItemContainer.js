@@ -10,7 +10,6 @@ var ListItemContainer = React.createClass({
   render : function(){
     return (
       <ListItemComponent 
-        key={this.props.key}
         item={this.props.item}
         quantity={this.state.quantity}
         handleClick={this.props.handleClick}
