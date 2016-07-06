@@ -18,10 +18,9 @@ var ListBookContainer = React.createClass({
 
   render : function(){
     return(
-      <ListBookComponent
-      	books={this.state.books}
-      	query={this.state.query}
-      	filter = {this.filter} />
+      <ListBookComponent query={this.state.query} filter = {this.filter}>
+        {this.state.books}
+      </ListBookComponent>
     )
   },
 

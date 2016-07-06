@@ -4,26 +4,36 @@ var ListItemComponent = require('./listItemComponent');
 var ListItemContainer = React.createClass({
 
 	getInitialState : function(){
-		return {quantity: 0};
+		return(
+      {
+        quantity: 0,
+        item: this.props.item
+      }
+    );
 	},
 
   render : function(){
     return (
       <ListItemComponent 
-        item={this.props.item}
+        item={this.state.item}
         quantity={this.state.quantity}
-        handleClick={this.props.handleClick}
+        disabled = {this.state.item.quantity < 1 ? true: false}
+        handleAddToCartClick={this.handleAddToCartClick}
         handleQuantityChange={this.handleQuantityChange}
       />
     );
   },
  
   handleQuantityChange : function(event){
-    debugger;
-    var value = event.target.value;
+    var value = parseInt(event.target.value);
     if(value >= 0 && value <= this.props.item.quantity){
       this.setState({quantity: value});
     }
+  },
+
+  handleAddToCartClick : function(){
+    this.props.handleClick(this.state.item, this.state.quantity);
+    this.setState({quantity: 0});
   }
 
 });

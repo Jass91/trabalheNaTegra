@@ -11,7 +11,7 @@ var BookCardComponent = function(props){
    				<div className="row">
    					<div className="col-xs-12 col-md-12 col-lg-12">
 		   				<img src="https://d30y9cdsu7xlg0.cloudfront.net/png/3542-200.png"
-		   						 className="img-thumbnail thumbnail" />
+		   						 className="img-thumbnail" />
 		   			</div>
 		   			<div className="col-xs-12 col-md-12 col-lg-12">
 	   					<span className="badge">{props.book.quantity}</span>

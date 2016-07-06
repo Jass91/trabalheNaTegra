@@ -3,7 +3,6 @@
 var React = require('react');
 
 var ListBookComponent = function(props){
-
   return(
    	<div>
    		<div className="row">
@@ -25,7 +24,7 @@ var ListBookComponent = function(props){
       <br/>
    		<div className="row">
         <div>
-          {props.books}
+          {props.children}
         </div>
       </div>
   	</div>

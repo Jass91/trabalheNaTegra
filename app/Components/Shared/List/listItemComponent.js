@@ -1,12 +1,13 @@
 'use strict'
 
 var React = require('react');
-var BookCardComponent = require('../Book/bookCardComponent');
+var BookCardComponent = require('../Book/BookCardComponent');
 
 var ListItemComponent = function(props){
+	
 	return(
 		<div className="col-lg-4 col-md-4 col-xs-12">
-	    <div className="well bookcard">
+	    <div className="well">
 	      <div>
 	        <BookCardComponent book = {props.item} />
 	      </div>
@@ -19,6 +20,7 @@ var ListItemComponent = function(props){
 			            	type="number"
 			            	className="form-control"
 			            	id="quantityChooser"
+			            	disabled = {props.disabled}
 			            	value={props.quantity}
 			            	onChange={props.handleQuantityChange}
 			            />
@@ -31,9 +33,8 @@ var ListItemComponent = function(props){
 			            type="button"
 			            value="Add to cart"
 			            className="btn btn-success"
-			            onClick={function(){
-			              props.handleClick(props.item, props.quantity);
-			            }}
+			            disabled = {props.disabled}
+			            onClick={props.handleAddToCartClick}
 			          />
 			        </div>
 			      </div>
