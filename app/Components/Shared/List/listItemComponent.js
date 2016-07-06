@@ -7,7 +7,7 @@ var ListItemComponent = function(props){
 	
 	return(
 		<div className="col-lg-4 col-md-4 col-xs-12">
-	    <div className="well">
+	    <div className="well well-sm">
 	      <div>
 	        <BookCardComponent book = {props.item} />
 	      </div>
@@ -20,7 +20,7 @@ var ListItemComponent = function(props){
 			            	type="number"
 			            	className="form-control"
 			            	id="quantityChooser"
-			            	disabled = {props.disabled}
+			            	disabled = {props.exhausted}
 			            	value={props.quantity}
 			            	onChange={props.handleQuantityChange}
 			            />
@@ -46,6 +46,7 @@ var ListItemComponent = function(props){
 			    		</div>
 			    	</div>
 			    </div>
+			
 	    </div>
 	 	</div>
 	);

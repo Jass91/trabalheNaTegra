@@ -17,7 +17,8 @@ var ListItemContainer = React.createClass({
       <ListItemComponent 
         item={this.state.item}
         quantity={this.state.quantity}
-        disabled = {this.state.item.quantity < 1 ? true: false}
+        disabled = {this.state.item.quantity < 1 || this.state.quantity == 0 ? true: false}
+        exhausted = {this.state.item.quantity == 0 ? true: false}
         handleAddToCartClick={this.handleAddToCartClick}
         handleQuantityChange={this.handleQuantityChange}
       />

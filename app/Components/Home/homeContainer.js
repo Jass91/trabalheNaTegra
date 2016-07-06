@@ -130,7 +130,7 @@ var HomeContainer = React.createClass({
       result.title = book.title;
       result.author = book.author;
       result.price = book.price;
-      result.quantity = 1;
+      result.quantity = quantity;
       cart.push(result);
 
     // else, we add more of the same book
