@@ -4,7 +4,7 @@ var Router = ReactRouter.Router;
 var Route = ReactRouter.Route;
 var BrowserHistory = ReactRouter.browserHistory;
 
-var Main = require('../Components/Main/mainComponent');
+var Main = require('../Components/Main/mainContainer');
 var Shopcart = require('../Components/Shopcart/shopcartContainer');
 var Home = require('../Components/Home/HomeContainer');
 

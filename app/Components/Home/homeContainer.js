@@ -1,4 +1,6 @@
 'use strict'
+
+// simple variables
 var books =
 [
   {
@@ -87,6 +89,10 @@ var books =
   }
 ];
 
+var cart = require('../Shared/Cart/cart');
+
+
+// react components
 var React = require('react');
 var HomeComponent = require('./homeComponent');
 var ListItemContainer = require('../Shared/List/listItemContainer');
@@ -111,9 +117,28 @@ var HomeContainer = React.createClass({
   },
 
   addToCart : function(book, quantity){
+   
+    // search for book inside the cart
+    var result = cart.find(function(e){
+      return e.id == book.id; 
+    });
+    
+    // if not found, it`s a new book
+    if(!result){
+      result = {};
+      result.id = book.id;
+      result.title = book.title;
+      result.author = book.author;
+      result.price = book.price;
+      result.quantity = 1;
+      cart.push(result);
 
-    // add to cart //
-
+    // else, we add more of the same book
+    }else{
+      var index = cart.indexOf(result);
+      cart[index].quantity += quantity;
+    }
+    
     // update book's quantity
   	this.updateBookQuantity(book, quantity);
   },
@@ -124,6 +149,10 @@ var HomeContainer = React.createClass({
     books[bookIndex].quantity -= quantity;
 
     this.setState({books: books});
+  },
+
+  componentWillMount : function(){
+
   }
 
 });

@@ -1,19 +1,14 @@
+'use strict'
 var React = require('react');
+var ListBookContainer = require('../Shared/Book/listBookContainer');
 
-var ShopcartComponent = React.createClass({
+var ShopcartComponent = function(props){
+  return(
+    <div>
+      <ListBookContainer books = {props.cart} />
+    </div>
+  );
 
-  render : function(){
-    return(
-      <div>
-      	<div className="row">
-      		<div className="col-xs-12 col-md-12 col-lg-12">
-        		<span>Estou no carrinho</span>
-        	</div>
-        </div>
-      </div>
-    );
-  }
+};
 
-});
-
-module.exports = ShopcartComponent;
+module.exports = ShopcartComponent
