@@ -15,11 +15,13 @@ var ListItemContainer = React.createClass({
   render : function(){
     return (
       <ListItemComponent 
+        btnTitle = {this.props.btnTitle}
         item={this.state.item}
         quantity={this.state.quantity}
+        className = {this.props.btnTitle == "Add to cart" ? "btn btn-success" : "btn btn-danger"}
         disabled = {this.state.item.quantity < 1 || this.state.quantity == 0 ? true: false}
         exhausted = {this.state.item.quantity == 0 ? true: false}
-        handleAddToCartClick={this.handleAddToCartClick}
+        handleClick={this.handleClick}
         handleQuantityChange={this.handleQuantityChange}
       />
     );
@@ -30,9 +32,10 @@ var ListItemContainer = React.createClass({
     if(value >= 0 && value <= this.props.item.quantity){
       this.setState({quantity: value});
     }
+    
   },
-
-  handleAddToCartClick : function(){
+  
+  handleClick : function(){
     this.props.handleClick(this.state.item, this.state.quantity);
     this.setState({quantity: 0});
   }

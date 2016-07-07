@@ -1,44 +1,24 @@
-var cart = require('../Shared/Cart/cart');
+'use strict'
+
+// data Source
+var dataSource = require('../Shared/Data/dataSource');
+
 
 // react components
 var React = require('react');
 var ShopcartComponent = require('./shopcartComponent');
-var CartItemContainer = require('../Shared/List/cartItemContainer');
+var ListItemContainer = require('../Shared/List/listItemContainer');
 
 var ShopcartContainer = React.createClass({
-  
+
   getInitialState : function(){
-  	return (
+    return(
       {
-        cart: cart,
+        cart: dataSource.cart,
         price: 0,
         count: 0
       }
     );
-  },
-
-  render : function(){
-    console.log(cart);
-    return(
-    		<ShopcartComponent
-          cart = {this.toCartItemArray()}
-          price = {this.state.price}
-          count = {this.state.count}
-        />
-    );
-  },
-
-  toCartItemArray : function(){
-    var self = this;
-    var items = this.state.cart.map(function(book, index){
-      return (<CartItemContainer key={index} item={book} handleClick={self.removeFromCart}/>);
-    });
-
-    return items;
-  },
-
-  removeFromCart : function(){
-    console.log("REMOVER");
   },
 
   componentWillMount(){
@@ -64,7 +44,48 @@ var ShopcartContainer = React.createClass({
     });
 
    return count;
-  }
+  },
+
+  toListItemArray : function(){
+    debugger;
+    if(this.state.cart.length == 0){
+      return [];
+    }
+
+    var self = this;
+    var items = this.state.cart.map(function(book, index){
+      return(
+        <ListItemContainer
+          key={index}
+          item={book}
+          handleClick={self.removeFromCart}
+          btnTitle="Remove from cart"
+        />
+      );
+    });
+
+    return items;
+  },
+
+  removeFromCart : function(book, quantity){
+    
+    dataSource.updateBookCartQuantity(book, -quantity);
+
+    // put book back on the store
+    dataSource.updateBookQuantity(book, quantity);
+
+    this.setState({cart: dataSource.cart});
+  },
+
+  render : function(){
+    return(
+      <ShopcartComponent
+        cart = {this.toListItemArray()}
+        price = {this.state.price}
+        count = {this.state.count}
+      />
+    );
+  },
 
 });
 

@@ -31,10 +31,10 @@ var ListItemComponent = function(props){
 			        <div className="pull-right">
 			          <input
 			            type="button"
-			            value="Add to cart"
-			            className="btn btn-success"
+			            value={props.btnTitle}
+			            className={props.className}
 			            disabled = {props.disabled}
-			            onClick={props.handleAddToCartClick}
+			            onClick={props.handleClick}
 			          />
 			        </div>
 			      </div>
