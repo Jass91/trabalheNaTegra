@@ -23,6 +23,6 @@ na linha dentro de "scripts", insira uma nova linha contendo:
 
 4) no terminal, execute: npm run start
 
-Ou veja direto no git pages:
+Ou veja direto no git pages:<br>
 1) acesse o link: https://jass91.github.io/
 2) Thramm!
