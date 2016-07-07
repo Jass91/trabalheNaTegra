@@ -6,8 +6,8 @@ var BookCardComponent = require('../Book/BookCardComponent');
 var ListItemComponent = function(props){
 	
 	return(
-		<div className="col-lg-4 col-md-4 col-xs-12">
-	    <div className="well well-sm">
+		<div className="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+	    <div className="well">
 	      <div>
 	        <BookCardComponent book = {props.item} />
 	      </div>
@@ -40,7 +40,7 @@ var ListItemComponent = function(props){
 			      </div>
 			    </div>
 			    <div className="row">
-			    	<div className="col-xs-12 col-md-12 col-lg-12">
+			    	<div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 			    		<div className="text-left">
 			    			<span className="label label-warning">Total: R$ {props.item.price * props.quantity}</span>
 			    		</div>
