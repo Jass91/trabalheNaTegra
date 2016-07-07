@@ -19,3 +19,7 @@ na linha dentro de "scripts", insira uma nova linha contendo:
 "production": "webpack -p", "start" : "webpack-dev-server"
 
 4) no terminal, execute: npm run start
+
+Ou veja direto no git pages:
+1) acesse o link: https://jass91.github.io/
+2) Thramm!
