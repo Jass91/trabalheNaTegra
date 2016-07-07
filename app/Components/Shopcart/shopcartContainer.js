@@ -47,7 +47,6 @@ var ShopcartContainer = React.createClass({
   },
 
   toListItemArray : function(){
-    debugger;
     if(this.state.cart.length == 0){
       return [];
     }
@@ -75,6 +74,8 @@ var ShopcartContainer = React.createClass({
     dataSource.updateBookQuantity(book, quantity);
 
     this.setState({cart: dataSource.cart});
+
+    this.forceUpdate();
   },
 
   render : function(){
