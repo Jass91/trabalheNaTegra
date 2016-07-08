@@ -103,7 +103,7 @@ const dataSource = {
 
 function funcUpdateBookQuantity(book, quantity){
   var bookToUpdate = this.books.find(function(e){
-  	return e.id = book.id;
+  	return e.id == book.id;
   });
 
   var bookIndex = this.books.indexOf(bookToUpdate);

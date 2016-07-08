@@ -16,7 +16,7 @@ var BookCardComponent = function(props){
 		   			</div>
 		   			<div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 	   					<span className={props.book.quantity > 0 ? "label label-success" : "label label-danger"}>
-                {props.book.quantity} remaining
+                {props.book.quantity}
               </span>
 	   				</div>
 	   			</div>

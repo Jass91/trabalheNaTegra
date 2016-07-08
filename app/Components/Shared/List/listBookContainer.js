@@ -16,6 +16,12 @@ var ListBookContainer = React.createClass({
 		);
   },
 
+  componentWillReceiveProps: function(nextProps) {
+    this.setState({
+      books: nextProps.books
+    });
+  },
+
   render : function(){
     return(
       <ListBookComponent query={this.state.query} filter = {this.filter}>

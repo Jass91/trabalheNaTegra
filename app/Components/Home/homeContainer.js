@@ -59,7 +59,7 @@ var HomeContainer = React.createClass({
     
     // update book's quantity 
   	dataSource.updateBookQuantity(book, -quantity);
-
+ 
     // update our ui based on the new state
     this.setState({books: dataSource.books});
 

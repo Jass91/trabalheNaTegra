@@ -67,13 +67,19 @@ var ShopcartContainer = React.createClass({
   },
 
   removeFromCart : function(book, quantity){
-    
+    debugger;
     dataSource.updateBookCartQuantity(book, -quantity);
 
     // put book back on the store
     dataSource.updateBookQuantity(book, quantity);
 
-    this.setState({cart: dataSource.cart});
+    this.setState(
+      {
+        cart: dataSource.cart,
+        price: this.getTotalPrice(),
+        count: this.getTotalCount()
+      }
+    );
 
     toastr.info(book.title,'Removed from cart.');
   },

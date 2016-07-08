@@ -13,6 +13,7 @@ var MainContainer = React.createClass({
 
 	componentWillMount :function(){
     
+    // toaster config
 		toastr.options = {
       "closeButton": false,
       "debug": false,
@@ -22,14 +23,15 @@ var MainContainer = React.createClass({
       "preventDuplicates": false,
       "onclick": null,
       "showDuration": "300",
-      "hideDuration": "1000",
-      "timeOut": "5000",
+      "hideDuration": "300",
+      "timeOut": "1000",
       "extendedTimeOut": "1000",
       "showEasing": "swing",
       "hideEasing": "linear",
       "showMethod": "show",
       "hideMethod": "fadeOut"
     };
+
 	}
 
 });

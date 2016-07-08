@@ -6,8 +6,7 @@ var ListItemContainer = React.createClass({
 	getInitialState : function(){
 		return(
       {
-        quantity: 0,
-        item: this.props.item
+        quantity: ""
       }
     );
 	},
@@ -16,11 +15,11 @@ var ListItemContainer = React.createClass({
     return (
       <ListItemComponent 
         btnTitle = {this.props.btnTitle}
-        item={this.state.item}
+        item={this.props.item}
         quantity={this.state.quantity}
-        className = {this.props.btnTitle == "Add to cart" ? "btn btn-success" : "btn btn-danger"}
-        disabled = {this.state.item.quantity < 1 || this.state.quantity == 0 ? true: false}
-        exhausted = {this.state.item.quantity == 0 ? true: false}
+        class = {this.props.btnTitle == "Add to cart" ? "btn btn-success" : "btn btn-danger"}
+        disabled = {this.props.item.quantity < 1 || this.state.quantity == 0 ? true: false}
+        exhausted = {this.props.item.quantity == 0 ? true: false}
         handleClick={this.handleClick}
         handleQuantityChange={this.handleQuantityChange}
       />
@@ -36,8 +35,8 @@ var ListItemContainer = React.createClass({
   },
   
   handleClick : function(){
-    this.props.handleClick(this.state.item, this.state.quantity);
-    this.setState({quantity: 0});
+    this.props.handleClick(this.props.item, this.state.quantity);
+    this.setState({quantity: ""});
   }
 
 });

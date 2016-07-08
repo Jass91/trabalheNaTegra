@@ -29,7 +29,7 @@ var ListItemComponent = function(props){
 			      </div>
 			      <div className="col-xs-6 col-md-6 col-lg-6 right">
 			        <div className="pull-right">
-			          <button className={props.className} disabled = {props.disabled} onClick={props.handleClick}>
+			          <button className={props.class} disabled = {props.disabled} onClick={props.handleClick}>
 			          	{props.btnTitle} <img src="https://d30y9cdsu7xlg0.cloudfront.net/png/28468-200.png" width="24" />
 			          </button>
 			        </div>
