@@ -1,6 +1,6 @@
 'use strict'
 var React = require('react');
-var ListBookContainer = require('../Shared/Book/listBookContainer');
+var ListBookContainer = require('../Shared/List/listBookContainer');
 
 var HomeComponent = function(props){
   return(

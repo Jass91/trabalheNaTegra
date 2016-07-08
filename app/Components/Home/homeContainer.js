@@ -62,6 +62,9 @@ var HomeContainer = React.createClass({
 
     // update our ui based on the new state
     this.setState({books: dataSource.books});
+
+    toastr.info(book.title,'Added to cart.');
+
   }
 
 });

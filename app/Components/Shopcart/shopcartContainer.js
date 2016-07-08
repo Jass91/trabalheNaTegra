@@ -75,7 +75,7 @@ var ShopcartContainer = React.createClass({
 
     this.setState({cart: dataSource.cart});
 
-    this.forceUpdate();
+    toastr.info(book.title,'Removed from cart.');
   },
 
   render : function(){
