@@ -12,10 +12,10 @@ Para rodar a aplicação a partir do codigo fonte, siga os procedimentos:
 <br>
 rode git clone https://github.com/Jass91/trabalheNaTegra.git
 
-2) no terminal rode:
-	npm install --save react react-dom react-router
-	npm install --save-dev html-webpack-plugin webpack webpack-dev-server
-	npm install --sabe-dev babel-core babel-loader babel-preset-react
+2) no terminal rode:<br>
+	npm install --save react react-dom react-router<br>
+	npm install --save-dev html-webpack-plugin webpack webpack-dev-server<br>
+	npm install --sabe-dev babel-core babel-loader babel-preset-react<br>
 
 3) No arquivo package.json gerado na raiz do projeto,
 na linha dentro de "scripts", insira uma nova linha contendo:
