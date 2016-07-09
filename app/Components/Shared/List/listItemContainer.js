@@ -27,8 +27,10 @@ var ListItemContainer = React.createClass({
   },
  
   handleQuantityChange : function(event){
-    var value = parseInt(event.target.value);
-    if(value >= 0 && value <= this.props.item.quantity){
+    debugger;
+    var v = parseInt(event.target.value);
+    var value = ( (isNaN(v) || v == "") ? "" : v);
+    if((value >= 0 && value <= this.props.item.quantity) || (v == "")){
       this.setState({quantity: value});
     }
     
